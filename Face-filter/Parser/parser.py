@@ -11,7 +11,7 @@ This function extracts the information from the XML into the classes
 
 
 def load_stages():
-    data_schema = xmlschema.XMLSchema('./xml/frontal_face.xsd')
+    data_schema = xmlschema.XMLSchema('xml/frontal_face.xsd')
     data = data_schema.to_dict('xml/frontal_face')
     stages = data['haarcascade_frontalface_alt2']['stages']['_']
 

@@ -58,8 +58,8 @@ def filterCreator(img):
     This function creates a list of filters of different kinds
     '''
     filters = []
-    filters.append(Glasses(Im.open("Filters/glasses.png").convert("RGBA"), img, "glasses"))
-    filters.append(Lips(Im.open("Filters/lips_2.png").convert("RGBA"), img,"lips"))
-    filters.append(Hat(Im.open("Filters/witch-hat.png").convert("RGBA"), img, "witch_hat"))
+    filters.append(Glasses(Im.open("Face-filter/Filters/glasses.png").convert("RGBA"), img, "glasses"))
+    filters.append(Lips(Im.open("Face-filter/Filters/lips_2.png").convert("RGBA"), img,"lips"))
+    filters.append(Hat(Im.open("Face-filter/Filters/witch-hat.png").convert("RGBA"), img, "witch_hat"))
 
     return filters

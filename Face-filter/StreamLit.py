@@ -43,9 +43,8 @@ def show_final_img(filters, file_uploaded, is_filters):
     is_face = None
     if (file_uploaded is not None):#uploaded file
         data, resized_img = get_image_data(file_uploaded)  # gets image as array data and resized image
-        final_image = Source.run(data, resized_img, filters, is_filters)
-        st.write(type(final_image))
-        if(type(final_image) == "<class 'numpy.ndarray'>" or type(final_image) == "<class 'PIL.Image.Image'>"):#If face was found
+        final_image, is_face = Source.run(data, resized_img, filters, is_filters)
+        if(is_face):#If face was found
             st.image(final_image)#shows image
         else:
             st.write("Face not found ):")

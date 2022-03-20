@@ -44,7 +44,7 @@ def run(data, image_file, filters_arr, choice):
         if(choice == 0):#edge detection
             averages_grid = find_eye_coords(avrg_coords, pixels, 0)
             final_img = print_img_aut(image, averages_grid, avrg_coords)
-            return final_img
+            return final_img, True
 
         elif(choice == 1):#filters
             facial_coords = find_eye_coords(avrg_coords, pixels, 1)
@@ -55,7 +55,7 @@ def run(data, image_file, filters_arr, choice):
             filters[1].image_after_filter = add_filter(filters[0].image_after_filter, filters, facial_coords, 1, filters_arr[1])#lips
             filters[2].image_after_filter = add_filter(filters[1].image_after_filter, filters, facial_coords, 2, filters_arr[2])#hat
 
-            return filters[2].image_after_filter
+            return filters[2].image_after_filter, True
 
     else:
-        return []
+        return None, False

@@ -44,6 +44,7 @@ def show_final_img(filters, file_uploaded, is_filters):
     if (file_uploaded is not None):#uploaded file
         data, resized_img = get_image_data(file_uploaded)  # gets image as array data and resized image
         final_image = Source.run(data, resized_img, filters, is_filters)
+        print(final_image)
         if(len(final_image) > 0):#If face was found
             st.image(final_image)#shows image
         else:

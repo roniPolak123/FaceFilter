@@ -20,7 +20,7 @@ class ClassifierCascade:
         is_face = False
         faces_list = []
         start_coords = [0, 0]
-
+        avrg_coords = None
         for col in range(const_nums.COLS - const_nums.MINI_GRID_SIZE):
             for row in range(const_nums.ROWS - const_nums.MINI_GRID_SIZE):
                 self.mini_grid = image.arr[row:row+const_nums.MINI_GRID_SIZE, col:col+const_nums.MINI_GRID_SIZE]#gets the mini grid
@@ -34,7 +34,8 @@ class ClassifierCascade:
 
         if is_face:#face found
             avrg_coords = self.calc_average_coords(faces_list)#gets the average coords of the face
-
+        print(avrg_coords)
+        print(is_face)
         return is_face, avrg_coords
 
     def calc_average_coords(self, faces_list):

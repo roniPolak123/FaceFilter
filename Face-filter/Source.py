@@ -58,4 +58,4 @@ def run(data, image_file, filters_arr, choice):
             return filters[2].image_after_filter
 
     else:
-        print("Face was not found")
+        return []

@@ -34,8 +34,6 @@ class ClassifierCascade:
 
         if is_face:#face found
             avrg_coords = self.calc_average_coords(faces_list)#gets the average coords of the face
-        print(avrg_coords)
-        print(is_face)
         return is_face, avrg_coords
 
     def calc_average_coords(self, faces_list):
